@@ -94,6 +94,8 @@ The Soundex encoding. It is a phonetic algorithm that considers how the words so
 
 # TODO
 
-- Optimize WagnerFischer for memory; currently it stores the whole matrix and so it needs O(mn) space. Only the previous row of the matrix needs to be stored, however, so it can be easily optimized to use O(m) space.
+- Optimize WagnerFischer for memory; currently it stores the whole matrix and so it needs O(mn) space. Only the previous row of the matrix needs to be stored, so it can be easily optimized to use O(m) space.
 
 - Accept cost functions instead of constant values in every Levenshtein implementation.
+
+- Moar algos!
