@@ -17,7 +17,7 @@ The first two parameters are the two strings to be compared. The last three para
         smetrics.WagnerFischer("POTATO", "POTATTO", 1, 1, 2)
 		>> 1, delete the second T on POTATTO
 
-        smetrics.WagnerFischer("MOUSE", HOUSE, 2, 2, 4)
+        smetrics.WagnerFischer("MOUSE", "HOUSE", 2, 2, 4)
 		>> 4, substitute M for H
 
 ## Ukkonen
@@ -33,7 +33,7 @@ The first two parameters are the two strings to be compared. The last three para
         smetrics.Ukkonen("POTATO", "POTATTO", 1, 1, 2)
 		>> 1, delete the second T on POTATTO
 
-        smetrics.Ukkonen("MOUSE", HOUSE, 2, 2, 4)
+        smetrics.Ukkonen("MOUSE", "HOUSE", 2, 2, 4)
 		>> 4, substitute M for H
 
 ## Jaro
