@@ -12,7 +12,7 @@ The Wagner-Fischer algorithm for calculating the Levenshtein distance. It runs o
 
 The first two parameters are the two strings to be compared. The last three parameters are the insertion cost, the deletion cost and the substitution cost. These are normally defined as 1, 1 and 2.
 
-### Examples:
+#### Examples:
 
         smetrics.WagnerFischer("POTATO", "POTATTO", 1, 1, 2)
 		>> 1, delete the second T on POTATTO
@@ -28,7 +28,7 @@ The Ukkonen algorithm for calculating the Levenshtein distance. The algorithm is
 
 The first two parameters are the two strings to be compared. The last three parameters are the insertion cost, the deletion cost and the substitution cost. These are normally defined as 1, 1 and 2.
 
-### Examples:
+#### Examples:
 
         smetrics.Ukkonen("POTATO", "POTATTO", 1, 1, 2)
 		>> 1, delete the second T on POTATTO
@@ -42,7 +42,7 @@ The first two parameters are the two strings to be compared. The last three para
 
 The Jaro distance. It is not very accurate, therefore you should prefer the JaroWinkler optimized version.
 
-### Examples:
+#### Examples:
 
         smetrics.Jaro("AL", "AL")
 		>> 1, equal strings
@@ -61,7 +61,7 @@ The JaroWinkler distance. JaroWinkler returns a number between 0 and 1 where 1 m
 
 JaroWinkler is a more accurate version of the Jaro algorithm. It works by boosting the score of exact matches at the beginning of the strings. By doing this, Winkler says that typos are less common to happen at the beginning. For this to happen, it introduces two more parameters: the boostThreshold and the prefixSize. These are commonly set to 0.7 and 4, respectively.
 
-### Examples:
+#### Examples:
 
         smetrics.JaroWinkler("AL", "AL", 0.7, 4)
 		>> 1, equal strings
@@ -78,7 +78,7 @@ JaroWinkler is a more accurate version of the Jaro algorithm. It works by boosti
 
 The Soundex encoding. It is a phonetic algorithm that considers how the words sound in english. Soundex maps a name to a 4-byte string consisting of the first letter of the original string and three numbers. Strings that sound similar should map to the same thing.
 
-### Examples:
+#### Examples:
 
         smetrics.Soundex("Euler")
 		>> E460
