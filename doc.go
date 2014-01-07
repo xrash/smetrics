@@ -101,4 +101,4 @@ The Soundex encoding. It is a phonetic algorithm that considers how the words so
 
 - Moar algos!
 */
-package main
+package smetrics
