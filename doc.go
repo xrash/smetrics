@@ -1,3 +1,4 @@
+/*
 # String metrics
 
 This library contains implementations of the Levenshtein distance, Jaro-Winkler and Soundex algorithms written in Go (golang). Other algorithms related with string metrics (or string similarity, whatever) are welcome.
@@ -99,3 +100,5 @@ The Soundex encoding. It is a phonetic algorithm that considers how the words so
 - Accept cost functions instead of constant values in every Levenshtein implementation.
 
 - Moar algos!
+*/
+package main
