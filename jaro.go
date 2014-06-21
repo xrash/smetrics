@@ -5,14 +5,18 @@ import (
 )
 
 func Jaro(a, b string) float64 {
-	matchRange := int(math.Floor(math.Max(float64(len(a)), float64(len(b))) / float64(2))) - 1
+	la := float64(len(a))
+	lb := float64(len(b))
+
+	// match range = max(len(a), len(b)) / 2 - 1
+	matchRange := int(math.Floor(math.Max(la, lb) / 2.0)) - 1
 	matchRange = int(math.Max(0, float64(matchRange - 1)))
 	var matches, halfs float64
 	transposed := make([]bool, len(b))
 
 	for i := 0; i < len(a); i++ {
 		start := int(math.Max(0, float64(i-matchRange)))
-		end := int(math.Min(float64(len(b)-1), float64(i+matchRange)))
+		end := int(math.Min(lb - 1, float64(i+matchRange)))
 
 		for j := start; j <= end; j++ {
 			if transposed[j] {
@@ -30,5 +34,11 @@ func Jaro(a, b string) float64 {
 		}
 	}
 
-	return ((matches/float64(len(a))) + (matches/float64(len(b))) + ((matches-math.Floor(float64(halfs/2))))/matches) / float64(3)
+	if matches == 0 {
+		return 0
+	}
+
+	transposes := math.Floor(float64(halfs/2))
+
+	return ((matches/la) + (matches/lb) + (matches-transposes)/matches) / 3.0
 }
