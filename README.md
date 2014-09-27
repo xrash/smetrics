@@ -8,7 +8,7 @@ This library contains implementations of the Levenshtein distance, Jaro-Winkler 
 
         func WagnerFischer(a, b string, icost, dcost, scost int) int
 
-The Wagner-Fischer algorithm for calculating the Levenshtein distance. It runs on O(mn) and the currently non-optimized version also needs O(mn) space. This version should be preferred over the Ukkonen one for short strings.
+The Wagner-Fischer algorithm for calculating the Levenshtein distance. It runs on O(mn) and the currently non-optimized version also needs O(mn) space.
 
 The first two parameters are the two strings to be compared. The last three parameters are the insertion cost, the deletion cost and the substitution cost. These are normally defined as 1, 1 and 2.
 
