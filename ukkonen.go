@@ -5,16 +5,27 @@ import (
 )
 
 func Ukkonen(a, b string, icost, dcost, scost int) int {
-	lowerCost := int(math.Min(float64(icost), math.Min(float64(dcost), float64(scost))))
-	infinite := math.MaxInt32/2
-	var r []int
+	var lowerCost int
 
-	if tmp := b; len(a) > len(b) {
+	if icost < dcost && icost < scost {
+		lowerCost = icost
+	} else if (dcost < scost) {
+		lowerCost = dcost
+	} else {
+		lowerCost = scost
+	}
+
+	infinite := math.MaxInt32/2
+
+	if len(a) > len(b) {
+		tmp := b
 		b = a
 		a = tmp
 	}
 
+	var r []int
 	var k, kprime, p int
+	var ins, del, sub int
 
 	t := (len(b) - len(a) + 1) * lowerCost
 
@@ -23,7 +34,11 @@ func Ukkonen(a, b string, icost, dcost, scost int) int {
 			continue
 		}
 
-		p = int(math.Floor(0.5*((float64(t)/float64(lowerCost)) - float64(len(b) - len(a)))))
+		// This is the right damn thing since the original Ukkonen 
+		// paper minimizes the expression result only, but the uncommented version
+		// doesn't need to deal with floats so it's faster.
+		// p = int(math.Floor(0.5*((float64(t)/float64(lowerCost)) - float64(len(b) - len(a)))))
+		p = ((t/lowerCost) - (len(b) - len(a))) / 2
 
 		k = -p
 		kprime = k
@@ -41,15 +56,14 @@ func Ukkonen(a, b string, icost, dcost, scost int) int {
 				if i == j+k && i == 0 {
 					r[j] = 0
 				} else {
-					var ins int
 					if (j-1 < 0) {
 						ins = infinite
 					} else {
 						ins = r[j-1] + icost
 					}
 
-					del := r[j+1] + dcost
-					sub := r[j] + scost
+					del = r[j+1] + dcost
+					sub = r[j] + scost
 
 					if i-1 < 0 || i-1 >= len(a) || j+k-1 >= len(b) || j+k-1 < 0 {
 						sub = infinite
@@ -57,7 +71,13 @@ func Ukkonen(a, b string, icost, dcost, scost int) int {
 						sub = r[j]
 					}
 
-					r[j] = int(math.Min(float64(ins), math.Min(float64(del), float64(sub))))
+					if ins < del && ins < sub {
+						r[j] = ins
+					} else if (del < sub) {
+						r[j] = del
+					} else {
+						r[j] = sub
+					}
 				}
 			}
 			k++
