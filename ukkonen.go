@@ -7,19 +7,18 @@ import (
 func Ukkonen(a, b string, icost, dcost, scost int) int {
 	lowerCost := int(math.Min(float64(icost), math.Min(float64(dcost), float64(scost))))
 	infinite := math.MaxInt32/2
-	var r map[int]int
+	var r []int
 
 	if tmp := b; len(a) > len(b) {
 		b = a
 		a = tmp
 	}
 
-	var accepted bool
 	var k, kprime, p int
 
 	t := (len(b) - len(a) + 1) * lowerCost
 
-	for !accepted {
+	for {
 		if (t/lowerCost) < (len(b) - len(a)) {
 			continue
 		}
@@ -29,11 +28,11 @@ func Ukkonen(a, b string, icost, dcost, scost int) int {
 		k = -p
 		kprime = k
 
-		r = make(map[int]int)
-
 		rowlength := (len(b) - len(a)) + (2*p)
 
-		for i := -1; i <= rowlength + 1; i++ {
+		r = make([]int, rowlength + 2)
+
+		for i := 0; i < rowlength + 2; i++ {
 			r[i] = infinite
 		}
 
@@ -42,7 +41,13 @@ func Ukkonen(a, b string, icost, dcost, scost int) int {
 				if i == j+k && i == 0 {
 					r[j] = 0
 				} else {
-					ins := r[j-1] + icost
+					var ins int
+					if (j-1 < 0) {
+						ins = infinite
+					} else {
+						ins = r[j-1] + icost
+					}
+
 					del := r[j+1] + dcost
 					sub := r[j] + scost
 
@@ -59,7 +64,7 @@ func Ukkonen(a, b string, icost, dcost, scost int) int {
 		}
 
 		if r[(len(b) - len(a)) + (2 * p) + kprime] <= t {
-			accepted = true
+			break;
 		} else {
 			t *= 2
 		}
