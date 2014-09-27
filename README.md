@@ -24,7 +24,7 @@ The first two parameters are the two strings to be compared. The last three para
 
         func Ukkonen(a, b string, icost, dcost, scost int) int
 
-The Ukkonen algorithm for calculating the Levenshtein distance. The algorithm is described [here](http://www.cs.helsinki.fi/u/ukkonen/InfCont85.PDF). It runs on O(t . min(m, n)) where t is the actual distance between strings a and b. It needs O(min(t, m, n)) space. This version should be preferred over the WagnerFischer one for very similar strings.
+The Ukkonen algorithm for calculating the Levenshtein distance. The algorithm is described [here](http://www.cs.helsinki.fi/u/ukkonen/InfCont85.PDF). It runs on O(t . min(m, n)) where t is the actual distance between strings a and b. It needs O(min(t, m, n)) space. This version should be preferred over the WagnerFischer one for strings very similar in size.
 
 The first two parameters are the two strings to be compared. The last three parameters are the insertion cost, the deletion cost and the substitution cost. These are normally defined as 1, 1 and 2.
 
