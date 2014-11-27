@@ -8,7 +8,7 @@ This library contains implementations of the Levenshtein distance, Jaro-Winkler 
 
         func WagnerFischer(a, b string, icost, dcost, scost int) int
 
-The Wagner-Fischer algorithm for calculating the Levenshtein distance. It runs on O(mn) and the currently non-optimized version also needs O(mn) space.
+The Wagner-Fischer algorithm for calculating the Levenshtein distance. It runs on O(mn) and needs O(2m) space where m is the size of the smallest string. This is kinda optimized so it should be used in most cases.
 
 The first two parameters are the two strings to be compared. The last three parameters are the insertion cost, the deletion cost and the substitution cost. These are normally defined as 1, 1 and 2.
 
@@ -24,7 +24,7 @@ The first two parameters are the two strings to be compared. The last three para
 
         func Ukkonen(a, b string, icost, dcost, scost int) int
 
-The Ukkonen algorithm for calculating the Levenshtein distance. The algorithm is described [here](http://www.cs.helsinki.fi/u/ukkonen/InfCont85.PDF). It runs on O(t . min(m, n)) where t is the actual distance between strings a and b. It needs O(min(t, m, n)) space. This version should be preferred over the WagnerFischer one for strings very similar in size.
+The Ukkonen algorithm for calculating the Levenshtein distance. The algorithm is described [here](http://www.cs.helsinki.fi/u/ukkonen/InfCont85.PDF). It runs on O(t . min(m, n)) where t is the actual distance between strings a and b, so this version should be preferred over the WagnerFischer for strings **very** similar. In practice, it's slower most of the times. It needs O(min(t, m, n)) space.
 
 The first two parameters are the two strings to be compared. The last three parameters are the insertion cost, the deletion cost and the substitution cost. These are normally defined as 1, 1 and 2.
 
@@ -94,8 +94,8 @@ The Soundex encoding. It is a phonetic algorithm that considers how the words so
 
 # TODO
 
-- Optimize WagnerFischer for memory; currently it stores the whole matrix and so it needs O(mn) space. Only the previous row of the matrix needs to be stored, so it can be easily optimized to use O(m) space.
-
 - Accept cost functions instead of constant values in every Levenshtein implementation.
+
+- Make a better interface.
 
 - Moar algos!

@@ -3,6 +3,13 @@ package smetrics
 func WagnerFischer(a, b string, icost, dcost, scost int) int {
 	var lowerCost int
 
+	// Make sure that 'a' is the smallest string, so we use less memory.
+	if len(a) > len(b) {
+		tmp := a
+		a = b
+		b = tmp
+	}
+
 	// Compute the lower of the insert, deletion and substitution costs.
 	if icost < dcost && icost < scost {
 		lowerCost = icost
