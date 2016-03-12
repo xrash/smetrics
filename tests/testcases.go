@@ -19,3 +19,9 @@ type soundexcase struct {
 	s string
 	t string
 }
+
+type hammingcase struct {
+	a string
+	b string
+	diff int
+}
