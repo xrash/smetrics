@@ -13,6 +13,10 @@ func TestHamming(t *testing.T) {
 		{"AAAA", "AABB", 2},
 		{"BAAA", "AAAA", 1},
 		{"BAAA", "CCCC", 4},
+		{"karolin", "kathrin", 3},
+		{"karolin", "kerstin", 3},
+		{"1011101", "1001001", 2},
+		{"2173896", "2233796", 3},
 	}
 
 	for _, c := range cases {
