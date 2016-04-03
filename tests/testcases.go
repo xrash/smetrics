@@ -7,12 +7,12 @@ type jarocase struct {
 }
 
 type levenshteincase struct {
-	s string
-	t string
+	s     string
+	t     string
 	icost int
 	dcost int
 	scost int
-	r int
+	r     int
 }
 
 type soundexcase struct {
@@ -21,7 +21,7 @@ type soundexcase struct {
 }
 
 type hammingcase struct {
-	a string
-	b string
+	a    string
+	b    string
 	diff int
 }
