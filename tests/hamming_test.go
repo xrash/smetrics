@@ -2,8 +2,8 @@ package tests
 
 import (
 	"fmt"
-	"testing"
 	"github.com/xrash/smetrics"
+	"testing"
 )
 
 func TestHamming(t *testing.T) {

@@ -1,9 +1,9 @@
 package tests
 
 import (
-	"testing"
 	"fmt"
 	"github.com/xrash/smetrics"
+	"testing"
 )
 
 func TestWagnerFischer(t *testing.T) {

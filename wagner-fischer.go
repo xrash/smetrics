@@ -13,15 +13,15 @@ func WagnerFischer(a, b string, icost, dcost, scost int) int {
 	// Compute the lower of the insert, deletion and substitution costs.
 	if icost < dcost && icost < scost {
 		lowerCost = icost
-	} else if (dcost < scost) {
+	} else if dcost < scost {
 		lowerCost = dcost
 	} else {
 		lowerCost = scost
 	}
 
 	// Allocate the array that will hold the last row.
-	row1 := make([]int, len(a) + 1)
-	row2 := make([]int, len(a) + 1)
+	row1 := make([]int, len(a)+1)
+	row2 := make([]int, len(a)+1)
 	var tmp []int
 
 	// Initialize the arrays.
@@ -44,7 +44,7 @@ func WagnerFischer(a, b string, icost, dcost, scost int) int {
 
 				if ins < del && ins < sub {
 					row2[j] = ins
-				} else if (del < sub) {
+				} else if del < sub {
 					row2[j] = del
 				} else {
 					row2[j] = sub
@@ -59,5 +59,5 @@ func WagnerFischer(a, b string, icost, dcost, scost int) int {
 	}
 
 	// Because we swapped the rows, the final result is in row1 instead of row2.
-	return row1[len(row1) - 1]
+	return row1[len(row1)-1]
 }
