@@ -94,6 +94,23 @@ The Soundex encoding. It is a phonetic algorithm that considers how the words so
         smetrics.Soundex("Ladd")
 		>> L300
 
+## Hamming
+
+        func Hamming(a, b string) (int, error)
+
+The Hamming distance is simply the minimum number of substitutions required to change one string into the other. Both strings must have the same size, of the function returns an error.
+
+#### Examples:
+
+        smetrics.Hamming("aaa", "aaa")
+		>> 0, nil
+
+        smetrics.Hamming("aaa", "aab")
+		>> 1, nil
+
+        smetrics.Hamming("aaaa", "a")
+		>> -1, error
+
 # TODO
 
 - Accept cost functions instead of constant values in every Levenshtein implementation.
