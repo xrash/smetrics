@@ -17,17 +17,15 @@ func Ukkonen(a, b string, icost, dcost, scost int) int {
 
 	infinite := math.MaxInt32 / 2
 
-	if len(a) > len(b) {
-		tmp := b
-		b = a
-		a = tmp
-	}
-
 	var r []int
-	var k, kprime, p int
+	var k, kprime, p, t int
 	var ins, del, sub int
 
-	t := (len(b) - len(a) + 1) * lowerCost
+	if len(a) > len(b) {
+		t = (len(a) - len(b) + 1) * lowerCost
+	} else {
+		t = (len(b) - len(a) + 1) * lowerCost
+	}
 
 	for {
 		if (t / lowerCost) < (len(b) - len(a)) {
