@@ -17,6 +17,8 @@ func JaroWinkler(a, b string, boostThreshold float64, prefixSize int) float64 {
 	for i := 0; i < prefixSize; i++ {
 		if a[i] == b[i] {
 			prefixMatch++
+		} else {
+			break
 		}
 	}
 

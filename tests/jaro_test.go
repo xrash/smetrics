@@ -7,19 +7,12 @@ import (
 )
 
 func TestJaro(t *testing.T) {
-	cases := []jarocase{
-		{"AL", "AL", 1.0},
-		{"MARTHA", "MARHTA", 0.9444444444444445},
-		{"JONES", "JOHNSON", 0.7904761904761904},
-		{"ABCVWXYZ", "CABVWXYZ", 0.9583333333333334},
-		{"A", "B", 0},
-		{"ABCDEF", "123456", 0},
-		{"AAAAAAAAABCCCC", "AAAAAAAAABCCCC", 1},
-	}
-
-	for _, c := range cases {
-		if r := smetrics.Jaro(c.s, c.t); r != c.r {
-			fmt.Println(r, "instead of", c.r)
+	for _, c := range __jaro_cases {
+		r := smetrics.Jaro(c.a, c.b)
+		result := fmt.Sprintf("%.3f", r)
+		expected := fmt.Sprintf("%.3f", c.r)
+		if result != expected {
+			fmt.Println(result, "instead of", expected)
 			t.Fail()
 		}
 	}
