@@ -43,7 +43,7 @@ var __jaro_cases = []*jarocase{
 	{a: "DWAYNE", b: "DUANE", r: 0.822},
 	{a: "SEAN", b: "SUSAN", r: 0.783},
 	{a: "JON", b: "JOHN", r: 0.917},
-//	{a: "JON", b: "JAN", r: 0.000},
+	//	{a: "JON", b: "JAN", r: 0.000},
 	{a: "BROOKHAVEN", b: "BRROKHAVEN", r: 0.933},
 	{a: "BROOK HALLOW", b: "BROOK HLLW", r: 0.944},
 	{a: "DECATUR", b: "DECATIR", r: 0.905},
@@ -52,7 +52,7 @@ var __jaro_cases = []*jarocase{
 	{a: "HIGBEE", b: "HIGVEE", r: 0.889},
 	{a: "LACURA", b: "LOCURA", r: 0.889},
 	{a: "IOWA", b: "IONA", r: 0.833},
-//	{a: "1ST", b: "IST", r: 0.000},
+	//	{a: "1ST", b: "IST", r: 0.000},
 }
 
 var __jaro_winkler_cases = []*jarocase{
@@ -72,7 +72,7 @@ var __jaro_winkler_cases = []*jarocase{
 	{a: "DWAYNE", b: "DUANE", r: 0.840},
 	{a: "SEAN", b: "SUSAN", r: 0.805},
 	{a: "JON", b: "JOHN", r: 0.933},
-//	{a: "JON", b: "JAN", r: 0.000},
+	//	{a: "JON", b: "JAN", r: 0.000},
 	{a: "BROOKHAVEN", b: "BRROKHAVEN", r: 0.947},
 	{a: "BROOK HALLOW", b: "BROOK HLLW", r: 0.967},
 	{a: "DECATUR", b: "DECATIR", r: 0.943},
@@ -81,5 +81,5 @@ var __jaro_winkler_cases = []*jarocase{
 	{a: "HIGBEE", b: "HIGVEE", r: 0.922},
 	{a: "LACURA", b: "LOCURA", r: 0.900},
 	{a: "IOWA", b: "IONA", r: 0.867},
-//	{a: "1ST", b: "IST", r: 0.000},
+	//	{a: "1ST", b: "IST", r: 0.000},
 }

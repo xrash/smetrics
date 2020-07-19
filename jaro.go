@@ -55,25 +55,25 @@ func Jaro(a, b string) float64 {
 	// Step 2: Transpositions
 	// Loop through the matches' arrays, looking for
 	// unaligned matches. Count the number of unaligned matches.
-		unaligned := 0
-		j := 0
-		for i := 0; i < len(a); i++ {
-			if !matchesA[i] {
-				continue
-			}
+	unaligned := 0
+	j := 0
+	for i := 0; i < len(a); i++ {
+		if !matchesA[i] {
+			continue
+		}
 
-			for !matchesB[j] {
-				j++
-			}
-
-			if a[i] != b[j] {
-				unaligned++
-			}
-
+		for !matchesB[j] {
 			j++
 		}
 
-		// The number of unaligned matches divided by two, is the number of _transpositions_.
+		if a[i] != b[j] {
+			unaligned++
+		}
+
+		j++
+	}
+
+	// The number of unaligned matches divided by two, is the number of _transpositions_.
 	transpositions := math.Floor(float64(unaligned / 2))
 
 	// Jaro distance is the average between these three numbers:
@@ -81,5 +81,5 @@ func Jaro(a, b string) float64 {
 	// 2. matches / length of string B
 	// 3. (matches - transpositions/matches)
 	// So, all that divided by three is the final result.
-	return ((matches / la) + (matches / lb) + ((matches-transpositions)/matches)) / 3.0
+	return ((matches / la) + (matches / lb) + ((matches - transpositions) / matches)) / 3.0
 }
