@@ -7,7 +7,7 @@ import (
 func Jaro(a, b string) float64 {
 	// If both strings are zero-length, they are completely equal,
 	// therefore return 1.
-	if len(a) == 0 && len(a) == 0 {
+	if len(a) == 0 && len(b) == 0 {
 		return 1
 	}
 
@@ -20,7 +20,7 @@ func Jaro(a, b string) float64 {
 	// Define the necessary variables for the algorithm.
 	la := float64(len(a))
 	lb := float64(len(b))
-	matchRange := int(math.Floor(math.Max(la, lb)/2.0)) - 1
+	matchRange := int(math.Max(0, math.Floor(math.Max(la, lb)/2.0)-1))
 	matchesA := make([]bool, len(a))
 	matchesB := make([]bool, len(b))
 	var matches float64 = 0

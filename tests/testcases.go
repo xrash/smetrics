@@ -53,6 +53,52 @@ var __jaro_cases = []*jarocase{
 	{a: "LACURA", b: "LOCURA", r: 0.889},
 	{a: "IOWA", b: "IONA", r: 0.833},
 	//	{a: "1ST", b: "IST", r: 0.000},
+
+	// Equal strings.
+	{a: "", b: "", r: 1.000},
+	{a: "A", b: "A", r: 1.000},
+	{a: "AA", b: "AA", r: 1.000},
+	{a: "AAA", b: "AAA", r: 1.000},
+	{a: "AAAA", b: "AAAA", r: 1.000},
+	{a: "AAAAA", b: "AAAAA", r: 1.000},
+	{a: "AAAAAA", b: "AAAAAA", r: 1.000},
+	{
+		a: "Legend of the Galactic Heroes",
+		b: "Legend of the Galactic Heroes",
+		r: 1.000,
+	},
+	{
+		a: "Home is the place where, when you have to go there, they have to take you in.",
+		b: "Home is the place where, when you have to go there, they have to take you in.",
+		r: 1.000,
+	},
+	{
+		a: "Pedro de Alcântara João Carlos Leopoldo Salvador Bibiano Francisco Xavier de Paula Leocádio Miguel Gabriel Rafael Gonzaga de Habsburgo-Lorena e Bragança",
+		b: "Pedro de Alcântara João Carlos Leopoldo Salvador Bibiano Francisco Xavier de Paula Leocádio Miguel Gabriel Rafael Gonzaga de Habsburgo-Lorena e Bragança",
+		r: 1.000,
+	},
+	{
+		a: "Et tu, Brute",
+		b: "Et tu, Brute",
+		r: 1.000,
+	},
+
+	// Completely different strings.
+	{a: "", b: "A", r: 0.000},
+	{a: "", b: "AA", r: 0.000},
+	{a: "", b: "AAA", r: 0.000},
+	{a: "", b: "AAAA", r: 0.000},
+	{a: "", b: "AAAAA", r: 0.000},
+	{a: "A", b: "", r: 0.000},
+	{a: "AA", b: "", r: 0.000},
+	{a: "AAA", b: "", r: 0.000},
+	{a: "AAAA", b: "", r: 0.000},
+	{a: "AAAAA", b: "", r: 0.000},
+	{a: "A", b: "B", r: 0.000},
+	{a: "AA", b: "BB", r: 0.000},
+	{a: "AAA", b: "BBB", r: 0.000},
+	{a: "AAAA", b: "BBBB", r: 0.000},
+	{a: "AAAAa", b: "BBBBB", r: 0.000},
 }
 
 var __jaro_winkler_cases = []*jarocase{
@@ -82,4 +128,51 @@ var __jaro_winkler_cases = []*jarocase{
 	{a: "LACURA", b: "LOCURA", r: 0.900},
 	{a: "IOWA", b: "IONA", r: 0.867},
 	//	{a: "1ST", b: "IST", r: 0.000},
+	{a: "w", b: "w", r: 1.000},
+
+	// Equal strings.
+	{a: "", b: "", r: 1.000},
+	{a: "A", b: "A", r: 1.000},
+	{a: "AA", b: "AA", r: 1.000},
+	{a: "AAA", b: "AAA", r: 1.000},
+	{a: "AAAA", b: "AAAA", r: 1.000},
+	{a: "AAAAA", b: "AAAAA", r: 1.000},
+	{a: "AAAAAA", b: "AAAAAA", r: 1.000},
+	{
+		a: "Legend of the Galactic Heroes",
+		b: "Legend of the Galactic Heroes",
+		r: 1.000,
+	},
+	{
+		a: "Home is the place where, when you have to go there, they have to take you in.",
+		b: "Home is the place where, when you have to go there, they have to take you in.",
+		r: 1.000,
+	},
+	{
+		a: "Pedro de Alcântara João Carlos Leopoldo Salvador Bibiano Francisco Xavier de Paula Leocádio Miguel Gabriel Rafael Gonzaga de Habsburgo-Lorena e Bragança",
+		b: "Pedro de Alcântara João Carlos Leopoldo Salvador Bibiano Francisco Xavier de Paula Leocádio Miguel Gabriel Rafael Gonzaga de Habsburgo-Lorena e Bragança",
+		r: 1.000,
+	},
+	{
+		a: "Et tu, Brute",
+		b: "Et tu, Brute",
+		r: 1.000,
+	},
+
+	// Completely different strings.
+	{a: "", b: "A", r: 0.000},
+	{a: "", b: "AA", r: 0.000},
+	{a: "", b: "AAA", r: 0.000},
+	{a: "", b: "AAAA", r: 0.000},
+	{a: "", b: "AAAAA", r: 0.000},
+	{a: "A", b: "", r: 0.000},
+	{a: "AA", b: "", r: 0.000},
+	{a: "AAA", b: "", r: 0.000},
+	{a: "AAAA", b: "", r: 0.000},
+	{a: "AAAAA", b: "", r: 0.000},
+	{a: "A", b: "B", r: 0.000},
+	{a: "AA", b: "BB", r: 0.000},
+	{a: "AAA", b: "BBB", r: 0.000},
+	{a: "AAAA", b: "BBBB", r: 0.000},
+	{a: "AAAAa", b: "BBBBB", r: 0.000},
 }

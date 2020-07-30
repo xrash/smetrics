@@ -12,7 +12,7 @@ func TestJaroWinkler(t *testing.T) {
 		result := fmt.Sprintf("%.3f", r)
 		expected := fmt.Sprintf("%.3f", c.r)
 		if result != expected {
-			fmt.Println(result, "instead of", expected, c.a, c.b)
+			fmt.Println(c.a, c.b, result, "instead of", expected)
 			t.Fail()
 		}
 	}
