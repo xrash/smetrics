@@ -1,6 +1,9 @@
 package smetrics
 
+// The Wagner-Fischer algorithm for calculating the Levenshtein distance.
+// The first two parameters are the two strings to be compared. The last three parameters are the insertion cost, the deletion cost and the substitution cost. These are normally defined as 1, 1 and 2 respectively.
 func WagnerFischer(a, b string, icost, dcost, scost int) int {
+
 	// Allocate both rows.
 	row1 := make([]int, len(b)+1)
 	row2 := make([]int, len(b)+1)

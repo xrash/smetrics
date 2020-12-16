@@ -4,6 +4,8 @@ import (
 	"math"
 )
 
+// The Ukkonen algorithm for calculating the Levenshtein distance. The algorithm is described in http://www.cs.helsinki.fi/u/ukkonen/InfCont85.PDF, or in docs/InfCont85.PDF. It runs on O(t . min(m, n)) where t is the actual distance between strings a and b. It needs O(min(t, m, n)) space. This function might be preferred over WagnerFischer() for *very* similar strings. But test it out yourself.
+// The first two parameters are the two strings to be compared. The last three parameters are the insertion cost, the deletion cost and the substitution cost. These are normally defined as 1, 1 and 2 respectively.
 func Ukkonen(a, b string, icost, dcost, scost int) int {
 	var lowerCost int
 

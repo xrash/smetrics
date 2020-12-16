@@ -4,6 +4,7 @@ import (
 	"strings"
 )
 
+// The Soundex encoding. It is a phonetic algorithm that considers how the words sound in English. Soundex maps a string to a 4-byte code consisting of the first letter of the original string and three numbers. Strings that sound similar should map to the same code.
 func Soundex(s string) string {
 	m := map[byte]string{
 		'B': "1", 'P': "1", 'F': "1", 'V': "1",

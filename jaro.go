@@ -4,6 +4,7 @@ import (
 	"math"
 )
 
+// The Jaro distance. The result is 1 for equal strings, and 0 for completely different strings.
 func Jaro(a, b string) float64 {
 	// If both strings are zero-length, they are completely equal,
 	// therefore return 1.
