@@ -8,8 +8,17 @@ import (
 func Soundex(s string) string {
 	b := strings.Builder{}
 	b.Grow(4)
-	b.WriteByte(s[0])
+
 	p := s[0]
+	if p <= 'z' && p >= 'a' {
+		p -= 32 // convert to uppercase
+	}
+	if p < 'A' || p > 'Z' {
+		// invalid first letter
+		return "0000"
+	}
+	b.WriteByte(p)
+
 	n := 0
 	for i := 1; i < len(s); i++ {
 		c := s[i]
