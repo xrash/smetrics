@@ -6,6 +6,24 @@ import (
 	"testing"
 )
 
+//func BenchmarkSoundex(b *testing.B) {
+//	fd, err := os.Open("testdata/english_names.txt")
+//	if err != nil {
+//		b.Fatal(err)
+//	}
+//	defer fd.Close()
+//
+//	scanner := bufio.NewScanner(fd)
+//	for scanner.Scan() {
+//		s := smetrics.Soundex(scanner.Text())
+//
+//		// Trivially use the result to avoid compiler optimizations.
+//		if len(s) != 4 {
+//			b.Fail()
+//		}
+//	}
+//}
+
 func TestSoundex(t *testing.T) {
 	cases := []soundexcase{
 		{"Euler", "E460"},
@@ -26,7 +44,7 @@ func TestSoundex(t *testing.T) {
 
 	for _, c := range cases {
 		if r := smetrics.Soundex(c.s); r != c.t {
-			fmt.Println(r, "instead of", c.t)
+			fmt.Println(r, "instead of", c.t, "for", c.s)
 			t.Fail()
 		}
 	}
