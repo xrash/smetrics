@@ -13,10 +13,6 @@ func Soundex(s string) string {
 	if p <= 'z' && p >= 'a' {
 		p -= 32 // convert to uppercase
 	}
-	if p < 'A' || p > 'Z' {
-		// invalid first letter
-		return "0000"
-	}
 	b.WriteByte(p)
 
 	n := 0
