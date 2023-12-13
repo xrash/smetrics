@@ -26,7 +26,7 @@ func TestSoundex(t *testing.T) {
 
 	for _, c := range cases {
 		if r := smetrics.Soundex(c.s); r != c.t {
-			fmt.Println(r, "instead of", c.t)
+			fmt.Println(r, "instead of", c.t, "for", c.s)
 			t.Fail()
 		}
 	}
