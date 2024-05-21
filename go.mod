@@ -1,3 +1,3 @@
 module github.com/xrash/smetrics
 
-go 1.15.0
+go 1.15
