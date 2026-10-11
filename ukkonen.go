@@ -17,6 +17,11 @@ func Ukkonen(a, b string, icost, dcost, scost int) int {
 		lowerCost = scost
 	}
 
+	// The threshold calculation requires a positive lower bound on edit cost.
+	if lowerCost == 0 {
+		return WagnerFischer(a, b, icost, dcost, scost)
+	}
+
 	infinite := math.MaxInt32 / 2
 
 	var r []int
