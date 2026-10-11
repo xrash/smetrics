@@ -8,6 +8,7 @@ import (
 
 func TestSoundex(t *testing.T) {
 	cases := []soundexcase{
+		{"", ""},
 		{"Euler", "E460"},
 		{"Ellery", "E460"},
 		{"Gauss", "G200"},
