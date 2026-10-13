@@ -14,6 +14,11 @@ type soundexcase struct {
 	t string
 }
 
+type metaphonecase struct {
+	s string
+	t string
+}
+
 type hammingcase struct {
 	a    string
 	b    string

@@ -14,6 +14,8 @@ Jaro() and JaroWinkler(). Read the documentation on these functions.
 
 For the Soundex algorithm, check the function Soundex().
 
+For the Metaphone algorithm, check the function Metaphone().
+
 For the Hamming distance algorithm, check the function Hamming().
 */
 package smetrics
