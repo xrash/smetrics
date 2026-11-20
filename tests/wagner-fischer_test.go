@@ -15,6 +15,10 @@ func TestWagnerFischer(t *testing.T) {
 		{"MOUSE", "HOUSE", 2, 2, 4, 4},
 		{"abc", "xy", 2, 3, 5, 13},
 		{"xy", "abc", 2, 3, 5, 12},
+		{"szellemhaj", "szellemhajó", 1, 1, 2, 1},
+		{"café", "cafe", 1, 1, 2, 2},
+		{"café", "cafe", 1, 1, 1, 1},
+		{"東京都", "京都", 1, 1, 2, 1},
 	}
 
 	for _, c := range cases {
