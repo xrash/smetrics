@@ -5,7 +5,12 @@ import (
 )
 
 // The Jaro distance. The result is 1 for equal strings, and 0 for completely different strings.
+// Strings are compared rune by rune, so a multibyte UTF-8 character counts as one character.
 func Jaro(a, b string) float64 {
+	return jaro([]rune(a), []rune(b))
+}
+
+func jaro(a, b []rune) float64 {
 	// If both strings are zero-length, they are completely equal,
 	// therefore return 1.
 	if len(a) == 0 && len(b) == 0 {

@@ -99,6 +99,11 @@ var __jaro_cases = []*jarocase{
 	{a: "AAA", b: "BBB", r: 0.000},
 	{a: "AAAA", b: "BBBB", r: 0.000},
 	{a: "AAAAa", b: "BBBBB", r: 0.000},
+	{a: "café", b: "cafe", r: 0.833},
+	{a: "naïve", b: "naive", r: 0.867},
+	{a: "szellemhaj", b: "szellemhajó", r: 0.970},
+	{a: "Müller", b: "Mueller", r: 0.783},
+	{a: "東京都", b: "京都", r: 0.000},
 }
 
 var __jaro_winkler_cases = []*jarocase{
@@ -175,4 +180,9 @@ var __jaro_winkler_cases = []*jarocase{
 	{a: "AAA", b: "BBB", r: 0.000},
 	{a: "AAAA", b: "BBBB", r: 0.000},
 	{a: "AAAAa", b: "BBBBB", r: 0.000},
+	{a: "café", b: "cafe", r: 0.883},
+	{a: "naïve", b: "naive", r: 0.893},
+	{a: "szellemhaj", b: "szellemhajó", r: 0.982},
+	{a: "Müller", b: "Mueller", r: 0.804},
+	{a: "éclair", b: "èclair", r: 0.889},
 }

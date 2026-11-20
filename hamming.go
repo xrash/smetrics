@@ -5,7 +5,9 @@ import (
 )
 
 // The Hamming distance is the minimum number of substitutions required to change string A into string B. Both strings must have the same size. If the strings have different sizes, the function returns an error.
-func Hamming(a, b string) (int, error) {
+// Strings are compared rune by rune, so a multibyte UTF-8 character counts as one character.
+func Hamming(sa, sb string) (int, error) {
+	a, b := []rune(sa), []rune(sb)
 	al := len(a)
 	bl := len(b)
 
